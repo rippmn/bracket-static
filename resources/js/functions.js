@@ -57,5 +57,8 @@ function loadTable() {
 }
 
 function getBoardPosition(nodePosition) {
+    if(nodePosition%64 == 0){
+        return {board: nodePosition/64, position: 64}
+    }
     return { board: (Math.floor(nodePosition / 64)) + 1, position: ((nodePosition % 64)) }
 }
