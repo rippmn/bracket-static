@@ -4,10 +4,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
      <meta http-equiv="refresh" content="120; URL=./index.html">
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="resources/css/foundation.css" />
+    <link rel="stylesheet" href="resources/css/short.css" />
   </head>
   <script src="resources/js/functions.js"></script>
-  <body>
-Stuff goes here
+  <body onload="loadTable()">
+    <div id="entry">
+      <br />
+      <table>
+          <tr>
+              <td>
+                  Entry: <input id="input" />
+              </td>
+              <td rowspan="2">
+                  <table id="entryTable">
+                      <th>Entry</th>
+                      <th>Insert</th>
+                      <th>Board</th>
+                      <th>Position</th>
+                  </table>
+              </td>
+          </tr>
+          <tr style="border: 0px">
+              <td style="border:0px"><Button onclick="getValue()">Get Bracket Position</Button></td>
+          </tr>
+      </table>
+  </div>
+
+
+  <br />
+  <table id="theTable">
+      <th>Entry</th>
+      <th>Insert</th>
+      <th>Board</th>
+      <th>Position</th>
+  </table>
+
     </body>
 </html>
