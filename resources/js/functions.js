@@ -14,12 +14,27 @@ function RPSNode(entryNum) {
 
 }
 
-function getValue() {
 
+function getValue() {
     entry = parseInt(document.getElementById("input").value);
     document.getElementById("input").value = "";
+    getEntryValue(entry)
+}
+
+function incrementPosition(increment) {
     var table = document.getElementById("entryTable")
-    if(isNaN(entry)){
+    if (table.rows.length == 2) {
+        var entry = parseInt(table.rows[1].cells[0].innerHTML) + increment
+        getEntryValue(entry)
+
+    }
+
+}
+
+function getEntryValue(entry) {
+
+    var table = document.getElementById("entryTable")
+    if (isNaN(entry)) {
         entry = "invalid input"
     }
     if (table.rows.length > 1) {
@@ -36,7 +51,7 @@ function getValue() {
         tr.insertCell(2).innerHTML = nodeBoardPos.board
         tr.insertCell(3).innerHTML = nodeBoardPos.position
 
-    }else{
+    } else {
         tr.insertCell(0).innerHTML = entry
     }
 
@@ -57,8 +72,8 @@ function loadTable() {
 }
 
 function getBoardPosition(nodePosition) {
-    if(nodePosition%64 == 0){
-        return {board: nodePosition/64, position: 64}
+    if (nodePosition % 64 == 0) {
+        return { board: nodePosition / 64, position: 64 }
     }
     return { board: (Math.floor(nodePosition / 64)) + 1, position: ((nodePosition % 64)) }
 }
