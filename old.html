@@ -8,12 +8,20 @@
 </head>
 <script src="resources/js/functions.js"></script>
 
-<body onload="getEntryValue(1)">
+<body>
   <div id="entry">
     <br />
     <h2>Single Entry</h2>
     <hr>
     <table>
+      <tr>
+        <td>
+          Entry: <input id="input" type="number" />
+        </td>
+      </tr>
+      <tr>
+        <td><Button onclick="getValue()">Get Bracket Position</Button></td>
+      </tr>
       <tr>
         <td>
           <table id="entryTable">
@@ -29,13 +37,6 @@
             onclick="incrementPosition(1)">Next</button>&nbsp;<button
             onclick="incrementPosition(-1)">Prior</button>&nbsp;<button onclick="incrementPosition(-5)">-5</button></td>
       </tr>
-      <tr>
-          <td>
-            Jump: <input id="input" type="number" />
-            &nbsp;
-          <Button onclick="getValue()">Go</Button></td>
-        </tr>
-  
     </table>
   </div>
 
